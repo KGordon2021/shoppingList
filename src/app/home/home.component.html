@@ -1,0 +1,33 @@
+
+<div class="container">
+
+  <div class="form">
+    <h1>My Shopping List</h1>
+
+    <form [formGroup]="shoppingList" action="">
+      <div class="group">
+        <input type="text" formControlName="item" class="form-control" placeholder="Add Shopping List Item Here">
+        <div class="btn">
+          <button type="submit" (click)="addItem()">Add Item</button>
+        </div>
+      </div>
+      <!-- <div>
+        <label for="">number: </label>
+        <input type="number" formControlName="email" class="form-control">
+      </div>
+      <div>
+        <label for="">Description: </label>
+        <input type="text" formControlName="email" class="form-control">
+      </div> -->
+
+    </form>
+    <!-- <input #movieName placeholder="Add Item"> -->
+  </div>
+
+
+
+<div class="view">
+  som text
+  <app-view-shopping-list></app-view-shopping-list>
+</div>
+</div>
