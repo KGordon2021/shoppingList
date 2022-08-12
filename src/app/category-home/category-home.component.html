@@ -1,0 +1,30 @@
+<p>category-home works!</p>
+
+<div class="form">
+  <h1>Categories List</h1>
+
+  <form [formGroup]="categoryList" action="">
+    <div class="group">
+      <input type="text" formControlName="category" class="form-control" placeholder="Add Shopping List category Here">
+      <div class="btn">
+        <button type="submit" (click)="addcategory()">Add category</button>
+      </div>
+    </div>
+    <!-- <div>
+      <label for="">number: </label>
+      <input type="number" formControlName="email" class="form-control">
+    </div>
+    <div>
+      <label for="">Description: </label>
+      <input type="text" formControlName="email" class="form-control">
+    </div> -->
+
+  </form>
+  <!-- <input #movieName placeholder="Add category"> -->
+</div>
+
+<div *ngIf="catList.length">
+  <ul *ngFor="let cat of catList">
+    <li>{{cat.category}}</li>
+  </ul>
+</div>

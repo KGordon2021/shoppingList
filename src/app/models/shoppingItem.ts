@@ -3,3 +3,9 @@ export class shoppingItemModel {
   // description!: String;
   // quantity!: Number;
 }
+
+export class categoryModel {
+  category!: String;
+  // description!: String;
+  // quantity!: Number;
+}

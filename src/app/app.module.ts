@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ViewShoppingListComponent } from './view-shopping-list/view-shopping-list.component';
 import { UpdateShoppingListComponent } from './update-shopping-list/update-shopping-list.component';
+import { CategoryHomeComponent } from './category-home/category-home.component';
+import { CategoryUpdateComponent } from './category-update/category-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ViewShoppingListComponent,
-    UpdateShoppingListComponent
+    UpdateShoppingListComponent,
+    CategoryHomeComponent,
+    CategoryUpdateComponent
   ],
   imports: [
     BrowserModule,
