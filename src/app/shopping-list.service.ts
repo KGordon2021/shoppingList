@@ -38,7 +38,7 @@ export class ShoppingListService {
   }
 
   updateById(item: any): Observable<shoppingItemModel> {
-    return this.http.put<shoppingItemModel>(`${this.rest_api}/updateById/{item.id}`, item, this.httpHeader).pipe (
+    return this.http.put<shoppingItemModel>(`${this.rest_api}/updateById/${item._id}`, item, this.httpHeader).pipe (
       tap(editedItem => {
         alert(editedItem.item + " has been updated to the shopping List")
         console.log(`editedItem = ${JSON.stringify(editedItem)}`)}),
