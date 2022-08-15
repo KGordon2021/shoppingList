@@ -1,13 +1,20 @@
-<p>category-home works!</p>
+
+<div class="container">
+ <div class="imgBx">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/005/925/084/small_2x/note-taking-or-minutes-of-meeting-conclusion-or-summary-education-lecture-or-write-important-information-concept-free-vector.jpg" alt="">
+</div>
 
 <div class="form">
   <h1>Categories List</h1>
 
   <form [formGroup]="categoryList" action="">
-    <div class="grouped">
+    <div class="group">
       <input type="text" formControlName="categories" class="form-control" placeholder="Add Shopping List category Here">
       <div class="btn">
         <button type="submit" (click)="addcategory()">Add category</button>
+      </div>
+      <div class="categories">
+        <a routerLink="/home">Home</a>
       </div>
     </div>
     <!-- <div>
@@ -23,7 +30,13 @@
   <!-- <input #movieName placeholder="Add category"> -->
 </div>
 
-<div *ngIf="catList.length">
+
+<div class="view">
+<div class="container2">
+  <div class="title">
+    <h2>View Categories List</h2>
+  </div>
+  <div *ngIf="catList.length" class="items">
   <ul *ngFor = "let cat of catList">
     <li>
       <a routerLink="/catupdate/{{cat._id}}">{{cat.categories}} </a>
@@ -31,3 +44,10 @@
     </li>
   </ul>
 </div>
+</div>
+</div>
+
+</div>
+
+
+

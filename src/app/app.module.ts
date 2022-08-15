@@ -10,6 +10,7 @@ import { ViewShoppingListComponent } from './view-shopping-list/view-shopping-li
 import { UpdateShoppingListComponent } from './update-shopping-list/update-shopping-list.component';
 import { CategoryHomeComponent } from './category-home/category-home.component';
 import { CategoryUpdateComponent } from './category-update/category-update.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CategoryUpdateComponent } from './category-update/category-update.compo
     ViewShoppingListComponent,
     UpdateShoppingListComponent,
     CategoryHomeComponent,
-    CategoryUpdateComponent
+    CategoryUpdateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

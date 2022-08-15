@@ -1,9 +1,15 @@
-<p>View Shopping List</p>
 
-<div *ngIf="itemsList.length">
+<div class="container2">
+<div class="title">
+  <h2>View Shopping List</h2>
+</div>
+<div *ngIf="itemsList.length" class="items">
   <ul *ngFor = "let item of itemsList">
     <li>
       <a routerLink="/update/{{item._id}}">{{item.item}} </a>
        <button (click)="remove(item)">Remove</button></li>
   </ul>
 </div>
+</div>
+
+

@@ -1,6 +1,6 @@
 .container {
   /* border: 2px solid yellow; */
-  padding: 50px 100px;
+  padding: 0px 100px;
   display: flex;
   flex-direction: column;
 }
@@ -15,7 +15,8 @@
 .container .form h1 {
   font-size: 40px;
   font-weight: 500;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+  color: #1c223c
 }
 .container .form form .group{
   display: flex;
@@ -28,14 +29,15 @@
   outline: none;
   border: none;
   border-radius: 5px;
-  border-bottom: 2px solid rgb(0, 0, 51);
+  border-bottom: 2px solid rgba(157,175,206,255);
   transform: translateX(50px);
+  margin-left: 150px;
 
 }
 
 .container .form form button {
   width: 120px;
-  background: rgb(189, 5, 5);
+  background: rgba(196,206,232,255);
   color: #fff;
   border-radius: 10px;
   font-size: 16px;
@@ -48,17 +50,17 @@
 
 }
 .container .form form button:hover {
-  background: darkred;
+  background: rgba(157,175,206,255);
 }
 
 .container .view {
   /* border: 2px solid green; */
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .container .form .categories a{
   text-decoration: none;
-  border-bottom: 2px solid darkblue;
+  border-bottom: 2px solid #1c223c;
   cursor: pointer;
   transition: all ease-in-out 0.8s;
   color:rgb(0, 0, 51)
@@ -71,3 +73,18 @@
   transform: translate(-50px, 15px);
 
 }
+
+.container .imgBx {
+  margin-left: 420px;
+ width: 300px;
+ /* border: 2px solid green; */
+ height: 200px;
+}
+
+
+.container .imgBx img{
+  width: 100%;
+  /* border: 2px solid green; */
+  height: 100%;
+ }
+/* . */
