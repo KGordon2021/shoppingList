@@ -1,5 +1,5 @@
 .container {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   padding: 50px 100px;
   display: flex;
   flex-direction: column;
@@ -52,5 +52,22 @@
 }
 
 .container .view {
-  border: 2px solid green;
+  /* border: 2px solid green; */
+  margin-top: 80px;
+}
+
+.container .form .categories a{
+  text-decoration: none;
+  border-bottom: 2px solid darkblue;
+  cursor: pointer;
+  transition: all ease-in-out 0.8s;
+  color:rgb(0, 0, 51)
+}
+
+.container .form .categories
+{
+  width: 200px;
+  font-size: 20px;
+  transform: translate(-50px, 15px);
+
 }

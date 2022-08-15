@@ -4,8 +4,8 @@
   <h1>Categories List</h1>
 
   <form [formGroup]="categoryList" action="">
-    <div class="group">
-      <input type="text" formControlName="category" class="form-control" placeholder="Add Shopping List category Here">
+    <div class="grouped">
+      <input type="text" formControlName="categories" class="form-control" placeholder="Add Shopping List category Here">
       <div class="btn">
         <button type="submit" (click)="addcategory()">Add category</button>
       </div>
@@ -24,7 +24,10 @@
 </div>
 
 <div *ngIf="catList.length">
-  <ul *ngFor="let cat of catList">
-    <li>{{cat.category}}</li>
+  <ul *ngFor = "let cat of catList">
+    <li>
+      <a routerLink="/catupdate/{{cat._id}}">{{cat.categories}} </a>
+     <button (click)="remove(cat)">Remove</button>
+    </li>
   </ul>
 </div>

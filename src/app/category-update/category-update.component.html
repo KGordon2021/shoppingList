@@ -1,1 +1,11 @@
 <p>category-update works!</p>
+
+<p>update-shopping-list works!</p>
+
+<div *ngIf="selectedItem">
+
+  <h3>Edit Item</h3>
+
+  <input [(ngModel)] = "selectedItem.categories">
+  <button (click)="updateItem()">Update</button>
+</div>

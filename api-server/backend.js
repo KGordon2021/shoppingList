@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 const shoppingListRoute = require('./routes/shoppingListRoute');
-
+const categoriesRoute = require('./routes/categoriesRoute')
 
 //mongoose and mongo DB database connection
 mongoose.connect('mongodb://127.0.0.1:27017/shoppingList')
@@ -24,6 +24,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/shoppingList')
 
   //setting Route middleware
   app.use('/api', shoppingListRoute);
+  app.use('/category', categoriesRoute);
 
   //setting up default port
   const port = process.env.PORT || 3000;

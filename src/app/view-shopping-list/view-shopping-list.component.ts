@@ -2,6 +2,7 @@ import { shoppingItemModel } from './../models/shoppingItem';
 import { Component, OnInit } from '@angular/core';
 import { ShoppingListService } from '../shopping-list.service';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-shopping-list',
@@ -12,7 +13,7 @@ export class ViewShoppingListComponent implements OnInit {
 
 itemsList: any[] = [];
 
-  constructor(private service: ShoppingListService, private location: Location) { }
+  constructor(private service: ShoppingListService, private location: Location, private routes: Router) { }
 
   ngOnInit(): void {
     this.getItems();
@@ -32,6 +33,6 @@ itemsList: any[] = [];
   }
 
   remove(item: any) {
-    this.service.deleteItem(item._id).subscribe ( () => this.goBack())
+    this.service.deleteItem(item._id).subscribe ( () => this.routes.navigate(['home']))
   }
 }

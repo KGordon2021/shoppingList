@@ -15,12 +15,12 @@ export class CategoryHomeComponent implements OnInit {
   catList: any[] = [];
 
   constructor(private service: ShoppingListService,
-    private fb: FormBuilder,
+    private formBuilder: FormBuilder,
     private routes: Router,
     private location: Location) {
 
-    this.categoryList = fb.group ({
-    category: ['', Validators.required],
+    this.categoryList = formBuilder.group ({
+    categories: ['', Validators.required],
 
     })
   }
@@ -30,9 +30,9 @@ export class CategoryHomeComponent implements OnInit {
   }
 
   addcategory() {
-    this.service.addItem(this.categoryList.value).subscribe((data: any)=> {
-      alert(data.item + " has been added to your Category List!");
-      this.routes.navigate([''])
+    this.service.addCategory(this.categoryList.value).subscribe((data: any)=> {
+      alert(data.categories + " has been added to your Category List!");
+      this.routes.navigate(['categories'])
     })
   }
 
@@ -41,7 +41,6 @@ export class CategoryHomeComponent implements OnInit {
     this.service.getCategoryList().subscribe(
       (res) => {
         this.catList = res;
-        console.log(`this.categoryList is ${JSON.stringify(this.catList)}`)
       })
   }
 
@@ -50,8 +49,13 @@ export class CategoryHomeComponent implements OnInit {
     this.location.back();
   }
 
-  remove(item: any) {
-    this.service.deleteItem(item._id).subscribe ( () => this.goBack())
+  remove(category: any) {
+    console.log(`${JSON.stringify(category._id)}`)
+    this.service.deletecategory(category._id).subscribe (
+      () => {
+        alert(category.categories + " has been removed from category List")
+        this.routes.navigate(['categories'])
+      })
   }
 
 }

@@ -5,7 +5,8 @@ const app = express();
 //Requiring Monsgoose Model
 let shoppingListItems = require('../models/shoppingListItems');
 let shoppingListRoute = express.Router();
-
+// let categoryList = require('../models/categories');
+// let categoryListRoute = express.Router();
 
 //mongoose Function
 // create()
@@ -14,7 +15,7 @@ let shoppingListRoute = express.Router();
 // findOneAndRemove()
 
 
-// Get All students
+// Get All items
 shoppingListRoute.route('/').get((req, res) => {
   shoppingListItems.find((error, data) => {
     if (error) {
@@ -24,6 +25,25 @@ shoppingListRoute.route('/').get((req, res) => {
     }
   })
 })
+
+// shoppingListRoute.route('/').get = async(req, res) => {
+//   try {
+//    const List =  await shoppingListItems.find();
+//     res.status(200).json ({
+//      status: 'success',
+//      results: List.length,
+//        data: {
+//          List
+//        }
+//      })
+//     } catch(error) {
+//        res.status(404).json({
+//          status: 'fail',
+//          message: err
+//        })
+//      }
+//    }
+
 
 
 //create shoppingListItems
@@ -72,4 +92,19 @@ shoppingListRoute.route('/remove/:id').delete((req, res) => {
     }
   })
 })
+
+
+
+
+// categoryListRoute.route('/catList').get((req, res) => {
+//   categoryList.find((error, data) => {
+//     if (error) {
+//       return next(error)
+//     } else {
+//       res.json(data)
+//     }
+//   })
+// })
+
+
 module.exports = shoppingListRoute;
