@@ -12,6 +12,8 @@ import { Location } from '@angular/common';
 export class HomeComponent implements OnInit {
 
   shoppingList: any;
+  itemsList: any[] = [];
+
   constructor(private service: ShoppingListService,
               private fb: FormBuilder,
               private routes: Router,
@@ -22,14 +24,37 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getItems();
   }
 
   addItem() {
     this.service.addItem(this.shoppingList.value).subscribe((data: any)=> {
       alert(data.item + " has been added to your Shopping List!");
+      this.itemsList.push(data)
       this.routes.navigate([''])
     })
   }
 
+  getItems():void {
+    this.service.getShoppingList().subscribe(
+      (res) => {
+        this.itemsList = res;
+        console.log(`this.itemsList is ${JSON.stringify(this.itemsList)}`)
+      })
+  }
+
+
+  goBack():void {
+    this.location.back();
+  }
+
+  remove(item: any) {
+    this.service.deleteItem(item._id).subscribe (
+      () => {
+        this.routes.navigate(['home']);
+        this.itemsList = this.itemsList.filter((u:any) => u!== item)
+
+      })
+  }
 
 }

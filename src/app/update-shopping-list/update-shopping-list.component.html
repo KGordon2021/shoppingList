@@ -1,9 +1,14 @@
-<p>update-shopping-list works!</p>
 
-<div *ngIf="selectedItem">
+<div class="con">
+  <div class="imgBx">
+    <img src="https://media.istockphoto.com/vectors/positive-business-man-with-a-giant-pencil-on-his-shoulder-nearby-on-vector-id1000027400?k=20&m=1000027400&s=612x612&w=0&h=hUPl1aP9FBlu_gwGlyHBiwhl6XS22QBXpRZCfYgM4Rc=" alt="">
+  </div>
+
+<div *ngIf="selectedItem" class="selectedItem">
 
   <h3>Edit Item</h3>
 
-  <input [(ngModel)] = "selectedItem.item">
+  <input [(ngModel)] = "selectedItem.item" style="font-style : italic">
   <button (click)="updateItem()">Update</button>
+</div>
 </div>

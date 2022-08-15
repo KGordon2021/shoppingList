@@ -1,11 +1,15 @@
-<p>category-update works!</p>
 
-<p>update-shopping-list works!</p>
+<div class="con">
+  <div class="imgBx">
+    <img src="https://img.freepik.com/free-vector/modern-check-list-illustration_79603-146.jpg?w=2000" alt="">
+  </div>
 
-<div *ngIf="selectedItem">
+  <div *ngIf="selectedItem" class="selectedItem">
 
-  <h3>Edit Item</h3>
+    <h3>Edit Category</h3>
 
-  <input [(ngModel)] = "selectedItem.categories">
-  <button (click)="updateItem()">Update</button>
+    <input place [(ngModel)] = "selectedItem.categories" style="font-style : italic">
+    <button (click)="updateItem()">Update</button>
+  </div>
 </div>
+

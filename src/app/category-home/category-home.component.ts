@@ -32,6 +32,7 @@ export class CategoryHomeComponent implements OnInit {
   addcategory() {
     this.service.addCategory(this.categoryList.value).subscribe((data: any)=> {
       alert(data.categories + " has been added to your Category List!");
+      this.catList.push(data);
       this.routes.navigate(['categories'])
     })
   }
@@ -52,8 +53,9 @@ export class CategoryHomeComponent implements OnInit {
   remove(category: any) {
     console.log(`${JSON.stringify(category._id)}`)
     this.service.deletecategory(category._id).subscribe (
-      () => {
-        alert(category.categories + " has been removed from category List")
+      (res) => {
+        alert(category.categories + " has been removed from category List");
+        this.catList = this.catList.filter((u:any) => u!== category)
         this.routes.navigate(['categories'])
       })
   }
